@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#101b2d">
+<title>Waranggono Trofeo 2026 — Jadwal & Klasemen</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+
+<!-- HEADER -->
+<header>
+  <div class="brand">
+    <button class="logo" id="logoBtn" title="Waranggono Trofeo">⚽</button>
+    <div>
+      <div class="eyebrow">Match Day • Mini Soccer</div>
+      <h1 id="tournamentName">Waranggono Trofeo 2026</h1>
+    </div>
+  </div>
+<div class="header-right">
+  <div class="header-tag" id="headerTag">PENYISIHAN · ROUND ROBIN</div>
+  <button class="admin-btn" id="adminBtn" style="display:none">
+    <i class="fa-solid fa-gear"></i> Admin
+  </button>
+</div>
+</header>
+
+<!-- ERROR BANNER -->
+<div id="errorBanner" class="error-banner" style="display:none"></div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-top">
+    <div>
+      <div class="eyebrow">Competition schedule</div>
+      <h2 id="heroTitle">Fase Penyisihan Grup</h2>
+      <p id="heroSub">4 grup · 12 tim · 1 lapangan · Juara grup lolos ke semifinal</p>
+    </div>
+    <div class="start-time">
+      <strong id="startTime">08:00</strong>
+      <span>Kick-off pertama</span>
+    </div>
+  </div>
+  <div class="stats">
+    <div class="stat"><b id="statTotal">12</b><small>Total pertandingan</small></div>
+    <div class="stat"><b id="statGroups">4</b><small>Grup peserta</small></div>
+    <div class="stat"><b id="statDuration">35'</b><small>Durasi per laga</small></div>
+    <div class="stat"><b id="statEnd">15:55</b><small>Target selesai</small></div>
+  </div>
+</section>
+
+<!-- ADMIN PANEL -->
+<section class="admin-panel" id="adminPanel" style="display:none">
+  <div class="admin-head">
+    <div>
+      <b><i class="fa-solid fa-wrench"></i> Panel Panitia</b>
+      <div class="admin-hint">Perubahan langsung tersimpan ke Google Sheets.</div>
+    </div>
+  </div>
+  <nav class="admin-tabs" id="adminTabs">
+    <button class="admin-tab active" data-tab="teams"><i class="fa-solid fa-users"></i> Tim</button>
+    <button class="admin-tab" data-tab="schedule"><i class="fa-regular fa-calendar"></i> Jadwal</button>
+    <button class="admin-tab" data-tab="scores"><i class="fa-solid fa-futbol"></i> Skor</button>
+    <button class="admin-tab" data-tab="knockout"><i class="fa-solid fa-trophy"></i> Knockout</button>
+  </nav>
+  <div class="admin-content" id="adminContent"></div>
+</section>
+
+<!-- PUBLIC NOTICE -->
+<div class="public-notice" id="publicNotice">
+  <i class="fa-solid fa-circle-info"></i>
+  Data diperbarui otomatis tiap 60 detik.
+  <span class="notice-admin">Panitia? Klik <b>⚙ Panitia</b> di kanan atas.</span>
+</div>
+
+<!-- JADWAL -->
+<div class="section-head">
+  <div>
+    <h3>Jadwal pertandingan</h3>
+    <p>Waktu termasuk jeda turun minum 5 menit dan jeda antarpertandingan 5 menit.</p>
+  </div>
+  <div class="actions">
+    <button class="btn primary" onclick="window.print()"><i class="fa-solid fa-download"></i> Cetak / PDF</button>
+  </div>
+</div>
+
+<nav class="filters" id="filters" aria-label="Filter grup">
+  <button class="filter active" data-filter="all">Semua pertandingan</button>
+</nav>
+
+<main class="schedule" id="schedule"></main>
+
+<!-- KLASEMEN -->
+<div class="section-head">
+  <div>
+    <h3><i class="fa-solid fa-ranking-star"></i> Klasemen grup</h3>
+    <p>Poin: menang 3, seri 1, kalah 0. Tie-breaker: GD → GF → head-to-head.</p>
+  </div>
+</div>
+<section class="standings" id="standings"></section>
+
+<!-- BRACKET -->
+<div class="section-head">
+  <div>
+    <h3><i class="fa-solid fa-trophy"></i> Bracket semifinal & final</h3>
+    <p>Juara grup A/B/C/D melaju ke semifinal (A1 vs B2, C1 vs D2).</p>
+  </div>
+</div>
+<section class="bracket" id="bracket"></section>
+<div id="champion"></div>
+
+<div class="note">
+  <b>Catatan panitia:</b> Setiap pertandingan berlangsung 35 menit (15' + istirahat 5' + 15'). Jeda 5 menit berikutnya untuk pergantian tim dan persiapan. Setelah penyisihan selesai pukul 15.55, siapkan waktu 15–30 menit untuk rekap klasemen sebelum semifinal.
+</div>
+
+<footer>
+  <div>WARANGGONO TROFEO 2026 · MINI SOCCER · 1 LAPANGAN</div>
+  <button class="logout-btn" id="logoutBtn" style="display:none">
+    <i class="fa-solid fa-right-from-bracket"></i> Keluar Mode Admin
+  </button>
+</footer>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
